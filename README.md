@@ -36,7 +36,7 @@ reference: >
 ...
 ```
 
-Any reference format which is supported by [citation-js] by default is supported in this field.
+Any reference format which is supported by [citation-js](https://citation.js.org) by default is supported in this field.
 This was intended for making zettel pages which are intrinsically linked to local citation data, however one can also use links to external locations.
 
 For example, one could use a doi as the reference:
