@@ -15,7 +15,7 @@ And then clone this repo into your notes (or add it as a submodule), ideally int
 Then add the following to `static/head.html`:
 ```
 <!-- citation transformer -->
-<script src="./static/citation-transformer.js" type="module"></script>
+<script src="./static/neuron-citation/citation-transformer.js" type="module"></script>
 ```
 
 ## Usage
@@ -67,8 +67,22 @@ Lorem ipsum dolor sit amet.
 This will be essentially transformed into text which looks like the following:
 
 >Lorem ipsum dolor sit amet.
+>
 >Blogs, J. (2021). My Book.
 
 Where the displayed APA citation also acts as a hyperlink to the zettel page, as before.
 
+---
 
+This tool is very new and I have a lot of plans for it, including:
+
+- [ ] use browserify, or something similar, to make project management easier
+- [ ] add control over citation-js output types (APA, harvard, or even raw bibtex)
+  - [ ] make it so that bibtex output is in a code block, and has a button to copy to clipboard
+- [ ] add different citation types (e.g. like biblatex's `\citeauthor`)
+  - [ ] make it easy for one to define their own citation types
+- [ ] make it so that the zettel page id/slug can be optionally used instead of a citation label (in this case we would use the first reference data we find in the page's metadata as the citation)
+- [ ] more convenient syntax
+- [ ] add a `<bibliography>` (or something like that) which shows all citations made on the page up to that point
+- [ ] fully-fledged neuron plugin/integration which allows citations to automatically create folgezettel links if desired
+  - [ ] there may also be some interesting use-cases for tags?
