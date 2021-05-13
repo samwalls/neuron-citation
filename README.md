@@ -2,6 +2,8 @@
 
 An experimental tool for adding citations to [neuron](https://github.com/srid/neuron).
 
+**Note**: this requires neuron version `1.9.29.0` or later.
+
 ## Installation
 
 In order to use this, first add the following to `static/head.html` in your neuron notes directory.
