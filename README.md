@@ -8,7 +8,7 @@ See [this project's github pages](https://samwalls.github.io/neuron-citation/) f
 
 ## Installation
 
-In order to use this, first add the following to `static/head.html` in your neuron notes directory.
+In order to use this, first add the following to [`head.html`](https://neuron.zettel.page/custom-head) in your neuron notes directory.
 
 ```
 <!-- citation.js -->
