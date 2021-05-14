@@ -4,6 +4,8 @@ An experimental tool for adding citations to [neuron](https://github.com/srid/ne
 
 **Note**: this requires neuron version `1.9.29.0` or later.
 
+See [this project's github pages](https://samwalls.github.io/neuron-citation/) for a set of working examples.
+
 ## Installation
 
 In order to use this, first add the following to `static/head.html` in your neuron notes directory.
