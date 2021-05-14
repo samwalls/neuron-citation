@@ -26,14 +26,24 @@ fetch('./cache.json')
                 const data = json.Graph.vertices[node];
                 const reference = data.Meta.reference;
                 if (reference !== undefined) {
-                    console.log(`found reference data for ${node}:`);
-                    //console.log(`adding reference: ${JSON.stringify(reference)}`);
                     const results = Cite.parse.input.chain(reference);
                     for (const result of results) {
-                        references[result.id] = result;
+                        // TODO: this is a horrible way to build references, we need a way of mapping from each variation of the same ID (e.g. DOI, DOI URL, ...) to the same object
+                        if (result.id !== undefined) {
+                            references[result.id] = result;
+                        }
+
+                        for (const equivalent of result._graph) {
+                            if (equivalent.data !== undefined) {
+                                references[equivalent.data] = result;
+                                //console.log(`${equivalent.data} -> ${result}`);
+                            }
+                        }
                     }
                 }
             }
+
+            //console.log(references);
 
             // transform parts of the page using <cite> elements
             const citations = document.body.querySelectorAll('cite');
@@ -42,7 +52,6 @@ fetch('./cache.json')
                 const zettelLinks = citation.querySelectorAll('.zettel-link');
                 for (const zettelLink of zettelLinks) {
                     const cite = new Cite();
-                    console.log(references);
 
                     // two options, either the <cite> contains a ref attribute, or it doesn't, and we use the reference of each zettel link in the citation
                     const label = citation.getAttribute('label');
