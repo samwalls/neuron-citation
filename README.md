@@ -16,7 +16,7 @@ In order to use this, first add the following to [`head.html`](https://neuron.ze
 ```
 
 And then clone this repo into your notes (or add it as a submodule), ideally into `static`.
-Then add the following to `static/head.html`:
+Then add the following to `head.html`:
 ```
 <!-- citation transformer -->
 <script src="./static/neuron-citation/citation-transformer.js" type="module"></script>
