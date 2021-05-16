@@ -34,10 +34,9 @@ fetch('./cache.json')
                         }
 
                         for (const equivalent of result._graph) {
-                            console.log(equivalent);
                             if (equivalent.data !== undefined) {
                                 references[equivalent.data] = result;
-                                console.log(`${equivalent.data} -> ${result}`);
+                                //console.log(`${equivalent.data} -> ${result}`);
                             }
                         }
                     }
